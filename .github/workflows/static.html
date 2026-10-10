@@ -6,157 +6,91 @@
 <meta name="theme-color" content="#3b2616">
 <title>منوی کافه هرا</title>
 <style>
-  :root {
-    --wall: #ddd3c3;
-    --wall-deep: #cdc1ae;
-    --porcelain: #fbf8f3;
-    --wood: #c98b3a;
-    --wood-soft: #e7c58f;
-    --ink: #3b2616;
-    --ink-soft: #6b5442;
-    --bud: #b56a8c;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    background: var(--wall);
-    color: var(--ink);
-    font-family: "Vazirmatn", "Vazir", "IRANSans", Tahoma, "Segoe UI", system-ui, sans-serif;
-    line-height: 1.8;
-    min-height: 100vh;
-  }
-  .band {
-    height: 22px;
-    background-color: var(--wood);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='22' viewBox='0 0 44 22'%3E%3Cpath d='M0 11 L11 0 L22 11 L11 22 Z' fill='none' stroke='%233b2616' stroke-width='1.6' stroke-dasharray='2.5 2.5'/%3E%3Cpath d='M22 11 L33 0 L44 11 L33 22 Z' fill='none' stroke='%233b2616' stroke-width='1.6' stroke-dasharray='2.5 2.5'/%3E%3Ccircle cx='11' cy='11' r='2' fill='%233b2616'/%3E%3Ccircle cx='33' cy='11' r='2' fill='%233b2616'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-position: center;
-  }
-  header {
-    background: var(--ink);
-    color: var(--porcelain);
-    text-align: center;
-    padding: 44px 24px 36px;
-  }
-  header h1 {
-    font-size: clamp(2.6rem, 14vw, 4rem);
-    font-weight: 800;
-    letter-spacing: 0;
-    line-height: 1.2;
-  }
-  header p {
-    margin-top: 10px;
-    color: var(--wood-soft);
-    font-size: 1.05rem;
-  }
-  .bud {
-    display: inline-block;
-    width: 14px; height: 14px;
-    background: var(--bud);
-    border-radius: 60% 60% 50% 50%;
-    transform: rotate(45deg);
-    margin-bottom: 14px;
-  }
-  main {
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 22px 16px 8px;
-  }
-  details {
-    background: var(--porcelain);
-    border-radius: 18px;
-    margin-bottom: 14px;
-    overflow: hidden;
-    border: 1px solid var(--wall-deep);
-  }
-  summary {
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 20px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    min-height: 56px;
-  }
-  summary::-webkit-details-marker { display: none; }
-  summary:focus-visible { outline: 3px solid var(--bud); outline-offset: -3px; }
-  .chev {
-    width: 11px; height: 11px;
-    border-inline-end: 2.5px solid var(--bud);
-    border-bottom: 2.5px solid var(--bud);
-    transform: rotate(45deg);
-    transition: transform .2s ease;
-    margin-inline-start: 12px;
-    flex: none;
-  }
-  details[open] .chev { transform: rotate(-135deg); }
-  details[open] summary { border-bottom: 1px dashed var(--wood-soft); }
-  .items { padding: 6px 20px 14px; list-style: none; }
-  .item { padding: 12px 0; }
-  .item + .item { border-top: 1px dotted var(--wall-deep); }
-  .row { display: flex; align-items: baseline; gap: 10px; }
-  .name { font-weight: 700; font-size: 1.05rem; }
-  .dots { flex: 1; border-bottom: 2px dotted var(--wood-soft); transform: translateY(-4px); min-width: 12px; }
-  .price { color: var(--bud); font-weight: 800; white-space: nowrap; font-size: 1.05rem; }
-  .desc { color: var(--ink-soft); font-size: .92rem; margin-top: 2px; }
-  .signature .name::after { content: " ✿"; color: var(--bud); }
-  footer {
-    max-width: 560px;
-    margin: 10px auto 0;
-    padding: 18px 20px 36px;
-    text-align: center;
-    color: var(--ink-soft);
-    font-size: .95rem;
-  }
-  footer p + p { margin-top: 4px; }
-  footer a { color: var(--ink); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--bud); }
-  .note { margin-top: 14px; font-size: .85rem; }
-  @media (prefers-reduced-motion: reduce) { .chev { transition: none; } }
+:root{--wall:#ddd3c3;--deep:#cdc1ae;--porc:#fbf8f3;--wood:#c98b3a;--soft:#e7c58f;--ink:#3b2616;--ink2:#6b5442;--bud:#b56a8c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--wall);color:var(--ink);font-family:"Vazirmatn",Tahoma,system-ui,sans-serif;line-height:1.8}
+.band{height:22px;background-color:var(--wood);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='22' viewBox='0 0 44 22'%3E%3Cpath d='M0 11 L11 0 L22 11 L11 22 Z' fill='none' stroke='%233b2616' stroke-width='1.6' stroke-dasharray='2.5 2.5'/%3E%3Cpath d='M22 11 L33 0 L44 11 L33 22 Z' fill='none' stroke='%233b2616' stroke-width='1.6' stroke-dasharray='2.5 2.5'/%3E%3Ccircle cx='11' cy='11' r='2' fill='%233b2616'/%3E%3Ccircle cx='33' cy='11' r='2' fill='%233b2616'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:center}
+header{background:var(--ink);color:var(--porc);text-align:center;padding:44px 24px 36px}
+header h1{font-size:clamp(2.6rem,14vw,4rem);font-weight:800;line-height:1.2}
+header p{margin-top:10px;color:var(--soft);font-size:1.05rem}
+.bud{display:inline-block;width:14px;height:14px;background:var(--bud);border-radius:60% 60% 50% 50%;transform:rotate(45deg);margin-bottom:14px}
+main{max-width:560px;margin:0 auto;padding:22px 16px 8px}
+details{background:var(--porc);border-radius:18px;margin-bottom:14px;overflow:hidden;border:1px solid var(--deep)}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:18px 20px;font-size:1.2rem;font-weight:700;min-height:56px}
+summary::-webkit-details-marker{display:none}
+.chev{width:11px;height:11px;border-inline-end:2.5px solid var(--bud);border-bottom:2.5px solid var(--bud);transform:rotate(45deg);transition:transform .2s;flex:none}
+details[open] .chev{transform:rotate(-135deg)}
+details[open] summary{border-bottom:1px dashed var(--soft)}
+ul{list-style:none;padding:6px 20px 14px}
+li{padding:12px 0}
+li+li{border-top:1px dotted var(--deep)}
+.row{display:flex;align-items:baseline;gap:10px}
+.n{font-weight:700;font-size:1.05rem}
+.d{flex:1;border-bottom:2px dotted var(--soft);transform:translateY(-4px);min-width:12px}
+.p{color:var(--bud);font-weight:800;white-space:nowrap}
+.t{color:var(--ink2);font-size:.92rem;margin-top:2px}
+.s .n::after{content:" ✿";color:var(--bud)}
+footer{max-width:560px;margin:10px auto 0;padding:18px 20px 36px;text-align:center;color:var(--ink2);font-size:.95rem}
+footer p+p{margin-top:4px}
+footer a{color:var(--ink);font-weight:700;text-decoration:none;border-bottom:2px solid var(--bud)}
 </style>
 </head>
 <body>
 
-<div class="band" aria-hidden="true"></div>
+<div class="band"></div>
 <header>
-  <span class="bud" aria-hidden="true"></span>
-  <h1 id="cafe-name">کافه هرا</h1>
-  <p id="tagline">یه گوشه‌ی گرم، یه فنجون چای، یه عصر آروم</p>
+  <span class="bud"></span>
+  <h1>کافه هرا</h1>
+  <p>یه گوشه‌ی گرم، یه فنجون چای، یه عصر آروم</p>
 </header>
-<div class="band" aria-hidden="true"></div>
+<div class="band"></div>
 
-<main id="menu"></main>
+<main>
+
+<details open>
+<summary>نوشیدنی گرم<span class="chev"></span></summary>
+<ul>
+<li class="s"><div class="row"><span class="n">چای گل محمدی</span><span class="d"></span><span class="p">۷۵,۰۰۰</span></div><p class="t">چای دمی با غنچه‌ی خشک گل محمدی، سرو در سینی چوبی</p></li>
+<li><div class="row"><span class="n">اسپرسو</span><span class="d"></span><span class="p">۶۵,۰۰۰</span></div><p class="t">تک‌شات، غلیظ و خوش‌عطر</p></li>
+<li><div class="row"><span class="n">لاته</span><span class="d"></span><span class="p">۹۵,۰۰۰</span></div><p class="t">اسپرسو با شیر بخارداده‌شده</p></li>
+<li><div class="row"><span class="n">کاپوچینو</span><span class="d"></span><span class="p">۹۵,۰۰۰</span></div><p class="t">اسپرسو، شیر و فوم سبک</p></li>
+<li><div class="row"><span class="n">هات‌چاکلت</span><span class="d"></span><span class="p">۱۰۵,۰۰۰</span></div><p class="t">شکلات تلخ و شیر داغ</p></li>
+</ul>
+</details>
+
+<details>
+<summary>نوشیدنی سرد<span class="chev"></span></summary>
+<ul>
+<li><div class="row"><span class="n">آیس‌لاته</span><span class="d"></span><span class="p">۱۰۵,۰۰۰</span></div><p class="t">اسپرسو، شیر سرد و یخ</p></li>
+<li><div class="row"><span class="n">لیموناد نعنایی</span><span class="d"></span><span class="p">۸۵,۰۰۰</span></div><p class="t">لیمو تازه، نعنا و کمی عسل</p></li>
+<li><div class="row"><span class="n">شربت بهارنارنج</span><span class="d"></span><span class="p">۸۰,۰۰۰</span></div><p class="t">خنک و معطر، با یخ</p></li>
+</ul>
+</details>
+
+<details>
+<summary>کیک و دسر<span class="chev"></span></summary>
+<ul>
+<li><div class="row"><span class="n">کیک شکلات</span><span class="d"></span><span class="p">۱۱۰,۰۰۰</span></div><p class="t">برش خانگی با سس شکلات</p></li>
+<li><div class="row"><span class="n">چیزکیک</span><span class="d"></span><span class="p">۱۲۰,۰۰۰</span></div><p class="t">با سس میوه‌ی فصل</p></li>
+<li><div class="row"><span class="n">کوکی خانگی</span><span class="d"></span><span class="p">۴۵,۰۰۰</span></div><p class="t">تازه‌پز، همراه چای عالیه</p></li>
+</ul>
+</details>
+
+<details>
+<summary>پیشنهاد کافه<span class="chev"></span></summary>
+<ul>
+<li class="s"><div class="row"><span class="n">نوشیدنی امضایی کافه</span><span class="d"></span><span class="p">۱۳۵,۰۰۰</span></div><p class="t">به‌زودی معرفی می‌شود</p></li>
+</ul>
+</details>
+
+</main>
 
 <footer>
-  <p id="hours"></p>
-  <p id="address"></p>
-  <p id="insta"></p>
-  <p class="note">قیمت‌ها به تومان است.</p>
+  <p>همه‌روزه ۹ صبح تا ۱۱ شب</p>
+  <p>ساری، آدرس کافه را اینجا بنویسید</p>
+  <p>اینستاگرام: <a href="https://instagram.com/cafe_hera" dir="ltr">@cafe_hera</a></p>
+  <p style="margin-top:14px;font-size:.85rem">قیمت‌ها به تومان است.</p>
 </footer>
 
-<script>
-const CAFE = {
-  name: "کافه هرا",
-  tagline: "یه گوشه‌ی گرم، یه فنجون چای، یه عصر آروم",
-  hours: "همه‌روزه ۹ صبح تا ۱۱ شب",
-  address: "ساری، آدرس کافه را اینجا بنویسید",
-  instagram: "cafe_hera"
-};
-
-const MENU = [
-  {
-    title: "نوشیدنی گرم",
-    open: true,
-    items: [
-      { name: "چای گل محمدی", desc: "چای دمی با غنچه‌ی خشک گل محمدی، سرو در سینی چوبی", price: 75000, signature: true },
-      { name: "اسپرسو", desc: "تک‌شات، غلیظ و خوش‌عطر", price: 65000 },
-      { name: "لاته", desc: "اسپرسو با شیر بخارداده‌شده", price: 95000 },
-      { name: "کاپوچینو", desc: "اسپرسو، شیر و فوم سبک", price: 95000 },
-      { name: "هات‌چاکلت", desc: "شکلات تلخ و شیر داغ", price: 105000 }
-    ]
-  },
-  {
-    title: "نوشیدنی سرد",
-    items: [
-      { name: "آیس‌لاته", de
+</body>
+</html>
